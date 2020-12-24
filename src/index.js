@@ -1,5 +1,5 @@
 import React from 'react';
-import { hydrate, render } from 'react-dom';
+import { render } from 'react-dom';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -15,8 +15,4 @@ function sendToAnalytics({ id, name, value }) {
 reportWebVitals(sendToAnalytics);
 
 const rootElement = document.getElementById('root');
-if (rootElement.hasChildNodes()) {
-  hydrate(<App />, rootElement);
-} else {
-  render(<App />, rootElement);
-}
+render(<App />, rootElement);
