@@ -13,6 +13,7 @@ export const Project = () => {
 
   const { slug } = useParams();
 
+  console.log();
   useEffect(() => {
     const defaultAnalytics = firebase.analytics();
     defaultAnalytics.logEvent('page_view', { page_title: slug });
