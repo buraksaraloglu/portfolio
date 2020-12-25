@@ -13,7 +13,7 @@ export const Header = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="/dist/burak_saraloglu_resume.pdf"
+          href="/dist/Burak_Saraloglu_CV.pdf"
           tabIndex="0"
         >
           Resume
@@ -71,7 +71,7 @@ export const ProjectHeader = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="/dist/burak_saraloglu_resume.pdf"
+          href="/dist/Burak_Saraloglu_CV.pdf"
           tabIndex="0"
         >
           Resume
