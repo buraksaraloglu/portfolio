@@ -2,8 +2,18 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai';
 import { BiArrowBack } from 'react-icons/bi';
+import firebase from 'firebase/app';
 
 export const Header = () => {
+  const handleResumeClick = (e) => {
+    const defaultAnalytics = firebase.analytics();
+    defaultAnalytics.logEvent('select_content', {
+      content_type: 'portfolio',
+      content_id: 'portfolio',
+      items: [{ name: 'Portfolio' }],
+    });
+    console.log(defaultAnalytics);
+  };
   return (
     <header>
       <nav>
@@ -15,6 +25,9 @@ export const Header = () => {
           rel="noopener noreferrer"
           href="/dist/Burak_Saraloglu_CV.pdf"
           tabIndex="0"
+          onClick={(e) => {
+            handleResumeClick(e);
+          }}
         >
           Resume
         </a>
@@ -60,6 +73,14 @@ export const Header = () => {
 
 export const ProjectHeader = () => {
   const history = useHistory();
+  const handleResumeClick = (e) => {
+    const defaultAnalytics = firebase.analytics();
+    defaultAnalytics.logEvent('select_content', {
+      content_type: 'portfolio',
+      content_id: 'portfolio',
+      items: [{ name: 'Portfolio' }],
+    });
+  };
 
   return (
     <header className="projectHeader">
@@ -73,6 +94,9 @@ export const ProjectHeader = () => {
           rel="noopener noreferrer"
           href="/dist/Burak_Saraloglu_CV.pdf"
           tabIndex="0"
+          onClick={(e) => {
+            handleResumeClick(e);
+          }}
         >
           Resume
         </a>
