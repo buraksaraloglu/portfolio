@@ -34,6 +34,13 @@ export const Project = () => {
 
   const project = works.filter((work) => work.slug === slug);
 
+  // Page Title Change
+  useEffect(() => {
+    if (project) {
+      document.title = `${project[0].title} - Burak Saraloglu`;
+    }
+  }, [project]);
+
   return project.map((demoWork) => (
     <section className="work project-page" key={demoWork.id}>
       <article className="work__inner">
