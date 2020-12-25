@@ -4,10 +4,11 @@
 
 ## Core Features:
 
-- Creation of Client-side by React.
-- Handling page requests with React Router
-- Use of styled-components for components’ styling.
-- Building of WYSIWYG editor via [react-quill](https://github.com/zenoamaro/react-quill).
-- User authentication with Firebase Auth.
-- The database has built using Firestore.
-- Average database reads per user have reduced 800% by using Context API (at first demo, average reads were: 25k reads/day; latest release: average reads are 3k reads/day).
+- Composed and deployed website using React, achieving 85+ performance rating on Google Pagespeed.
+- Organized page navigation and error pages with React Router.
+- Designed React Components in styled-components.
+- Generated a WYSIWYG editor via [react-quill](https://github.com/zenoamaro/react-quill).
+- Simplification of user authentication by 25%, integrated Firebase Auth
+- Developed back-end with Firebase and Firestore.
+- Reduced average database reads per user 800% using Context API (from 25k reads/day to 3k reads/day).
+- Conceptualized UI / UX designs including storyboarding.
