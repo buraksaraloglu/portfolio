@@ -1,8 +1,16 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 export const FirstBanner = () => {
   return (
     <>
+      <Helmet>
+        <title>Burak Saraloglu - Front-end Developer</title>
+        <meta
+          name="description"
+          content="Hello, I'm Burak. A front-end developer, music producer and videographer."
+        />
+      </Helmet>
       <section className="first-banner">
         <article className="introduction">
           <h1 className="introduction__header">

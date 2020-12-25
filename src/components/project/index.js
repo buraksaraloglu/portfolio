@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import works from '../../fixtures/works.json';
@@ -34,66 +35,67 @@ export const Project = () => {
 
   const project = works.filter((work) => work.slug === slug);
 
-  // Page Title Change
-  useEffect(() => {
-    if (project) {
-      document.title = `${project[0].title} - Burak Saraloglu`;
-    }
-  }, [project]);
-
   return project.map((demoWork) => (
-    <section className="work project-page" key={demoWork.id}>
-      <article className="work__inner">
-        <aside className="work__inner__top">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={demoWork.demo}
-            tabIndex="0"
-          >
-            <img
-              src={
-                device === 'desktop' ? demoWork.imgLink : demoWork.mobileImgLink
-              }
-              alt={demoWork.alt}
-              width={device === 'desktop' ? '800' : '300'}
-              height={device === 'desktop' ? '400' : '600'}
-              loading="lazy"
-              className="demo-image"
-            />
-          </a>
-        </aside>
-        <aside className="work__inner__bottom">
-          <div className="description-container">
-            <div className="title-container">
-              <h1 className="demo-title">{demoWork.title} </h1>
-              <div className="source-links">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={demoWork.demo}
-                  tabIndex="0"
-                  className="outline-button demo-link"
-                >
-                  Live Demo
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={demoWork.github}
-                  tabIndex="0"
-                  className="outline-button demo-link"
-                >
-                  Github
-                </a>
+    <>
+      <Helmet>
+        <title>{demoWork.title} - Burak Saraloglu</title>
+        <meta name="description" content={demoWork.desc} />
+      </Helmet>
+      <section className="work project-page" key={demoWork.id}>
+        <article className="work__inner">
+          <aside className="work__inner__top">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={demoWork.demo}
+              tabIndex="0"
+            >
+              <img
+                src={
+                  device === 'desktop'
+                    ? demoWork.imgLink
+                    : demoWork.mobileImgLink
+                }
+                alt={demoWork.alt}
+                width={device === 'desktop' ? '800' : '300'}
+                height={device === 'desktop' ? '400' : '600'}
+                loading="lazy"
+                className="demo-image"
+              />
+            </a>
+          </aside>
+          <aside className="work__inner__bottom">
+            <div className="description-container">
+              <div className="title-container">
+                <h1 className="demo-title">{demoWork.title} </h1>
+                <div className="source-links">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={demoWork.demo}
+                    tabIndex="0"
+                    className="outline-button demo-link"
+                  >
+                    Live Demo
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={demoWork.github}
+                    tabIndex="0"
+                    className="outline-button demo-link"
+                  >
+                    Github
+                  </a>
+                </div>
               </div>
+              <article className="project__details">
+                <ReactMarkdown source={mdText} />
+              </article>
             </div>
-            <article className="project__details">
-              <ReactMarkdown source={mdText} />
-            </article>
-          </div>
-        </aside>
-      </article>
-    </section>
+          </aside>
+        </article>
+      </section>
+    </>
   ));
 };
