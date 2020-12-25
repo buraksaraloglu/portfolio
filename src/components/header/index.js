@@ -7,12 +7,7 @@ import firebase from 'firebase/app';
 export const Header = () => {
   const handleResumeClick = (e) => {
     const defaultAnalytics = firebase.analytics();
-    defaultAnalytics.logEvent('select_content', {
-      content_type: 'portfolio',
-      content_id: 'portfolio',
-      items: [{ name: 'Portfolio' }],
-    });
-    console.log(defaultAnalytics);
+    defaultAnalytics.logEvent('file_download', { content_id: 'portfolio' });
   };
   return (
     <header>

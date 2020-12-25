@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import works from '../../fixtures/works.json';
 import whatwas from '../../fixtures/whatwas.md';
 import tictactoe from '../../fixtures/tictactoe.md';
+import firebase from 'firebase/app';
 
 export const Project = () => {
   const [mdText, setMdText] = useState('');
@@ -12,6 +13,9 @@ export const Project = () => {
   const { slug } = useParams();
 
   useEffect(() => {
+    const defaultAnalytics = firebase.analytics();
+    defaultAnalytics.logEvent('page_view', { page_title: slug });
+
     if (slug !== undefined) {
       fetch(
         slug === 'whatwas' ? whatwas : slug === 'tictactoe' ? tictactoe : ''
