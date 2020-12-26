@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
 
 html,
 body,
@@ -136,12 +137,14 @@ em {
 
 // Variables
 
-$body-background: #fbfbfd;
-$header-background: rgba(251, 251, 253, 0.65);
-$project-background: #f5f5f7;
+$body-background: #ffffff;
+$banner-background: #f8f5f2;
+$header-background: rgba(255, 255, 255, 0.65);
+$project-background: #fffffe;
 $project-page-background: #000000;
 $project-page-text: #f5f5f7;
-$body-text: #1d1d1f;
+$project-text: rgb(35, 35, 35);
+$body-text: #000000;
 $body-hover: lighten($body-text, 30%);
 $light-text: #919195;
 
@@ -167,7 +170,7 @@ header {
   justify-content: space-between;
   top: 0;
   padding: 5px 24px;
-  margin: 0 auto 12px;
+  margin: 0 auto;
   background-color: $header-background;
   backdrop-filter: saturate(180%) blur(20px);
 
@@ -256,90 +259,113 @@ header {
 
 .first-banner {
   display: flex;
+  flex-flow: column wrap;
   align-items: center;
-  max-width: 1400px;
+  justify-content: center;
   margin: 0 auto;
-  height: calc(100vh - 197px);
-
+  height: 90vh;
+  background-color: $banner-background;
   .introduction {
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    margin: 0 12px;
-    font-size: 5rem;
-    font-weight: 700;
-    transform: translateY(0);
+    padding: 0 20px;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    width: 820px;
+    cursor: default;
     transition: all 0.2s ease-in-out;
 
-    &__header {
-      color: $body-text;
-      letter-spacing: -4.5px;
+    nav {
+      ul {
+        li {
+          font-size: 18px;
+          font-weight: 500;
+          display: block;
+          float: left;
+          margin-right: 40px;
+          a {
+            position: relative;
+            display: inline-block;
+            padding: 5px 0;
+            color: $body-text;
+            text-decoration: none;
+            cursor: pointer;
 
-      line-height: 100%;
-      transition: all 0.2s ease-in-out;
-      span {
-        font-weight: 500;
+            &:after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              bottom: 0;
+              left: 0;
+              background-color: $body-text;
+              transform: scaleX(0);
+              transform-origin: bottom right;
+              transition: transform 0.3s;
+            }
+
+            &:hover {
+              &:after {
+                transform-origin: bottom left;
+                transform: scaleX(1);
+              }
+            }
+          }
+        }
       }
     }
-    &__lower-text {
-      margin: 1.5em 0 0;
+    &__name {
       font-size: 18px;
       font-weight: 400;
-      letter-spacing: -0.015em;
-      opacity: 0.8;
+      opacity: 0.4;
     }
 
-    @media (max-width: 1600px) {
-      transform: translateY(-25%);
-      &__header {
-        font-size: 4.5rem;
-        line-height: 95%;
-      }
+    &__header {
+      margin: 40px 0;
+      color: $body-text;
+      font-weight: 500;
+      line-height: 1.6;
+      transition: all 0.2s ease-in-out;
     }
-    @media (max-width: 800px) {
-      transform: translateY(-10%);
-    }
-    @media (max-width: 350px) {
-      &__header {
-        font-size: 3rem;
-      }
+    &__lower-text {
+      font-size: 18px;
     }
   }
-  @media (max-width: 1600px) {
-    max-width: 1080px;
-  }
-  @media (max-width: 1200px) {
-    max-width: 800px;
+  @media (max-width: 800px) {
+    .introduction {
+      width: 90%;
+    }
+    .scroll-indicator {
+      bottom: 7rem;
+    }
   }
 }
 
 .work {
   display: flex;
-  margin: 60px auto;
-  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
   background-color: $project-background;
-  border-radius: 20px;
+  border-bottom: 1px solid #0000000f;
   transition: box-shadow 0.3s ease-in-out;
-  &:hover {
-    box-shadow: 0px 10px 30px -5px rgba(190, 190, 190, 0.4);
-  }
+
   &__inner {
     display: flex;
-    width: 100%;
-    padding: 60px;
-    justify-content: center;
+    padding: 80px 40px;
+    margin: 0 auto;
 
     &__top {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 60%;
 
       a {
         &:focus {
           outline: 0;
         }
         .demo-image {
-          width: 100%;
+          width: 550px;
           height: auto;
           border-radius: 15px;
         }
@@ -352,22 +378,21 @@ header {
       }
     }
     &__bottom {
-      width: 40%;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: $body-text;
-      margin: auto 0 auto 30px;
+      color: $project-text;
+      margin: auto 0 auto 80px;
 
       .description-container {
         .title-container {
           display: flex;
+          flex-flow: row wrap;
+          justify-content: space-between;
           align-items: center;
           margin-bottom: 20px;
           .demo-title {
-            font-size: 45px;
-            font-weight: 500;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 52px;
             margin-right: 10px;
             @media (max-width: 600px) {
               font-size: 36px;
@@ -375,9 +400,10 @@ header {
             }
           }
           .source-links {
+            display: flex;
+            justify-content: space-between;
             .demo-link {
-              margin: 0 15px;
-
+              margin-left: 10px;
               &:focus {
                 outline: 0;
               }
@@ -444,7 +470,7 @@ header {
           }
         }
       }
-      @media (max-width: 800px) {
+      @media (max-width: 1000px) {
         .demo-links {
           margin-top: 15px;
           a {
@@ -454,7 +480,7 @@ header {
         }
       }
     }
-    @media (max-width: 800px) {
+    @media (max-width: 950px) {
       flex-direction: column;
       padding: 30px;
       height: 100%;
@@ -464,7 +490,8 @@ header {
       }
 
       &__bottom {
-        margin: 30px 0;
+        max-width: 550px;
+        margin: 30px auto;
         .demo-description {
           width: 100%;
         }
@@ -474,8 +501,8 @@ header {
 }
 
 .scroll-indicator {
-  margin: 15px auto;
-  position: relative;
+  position: absolute;
+  bottom: 10rem;
   opacity: 0.5;
   &::before,
   &::after {
@@ -662,4 +689,17 @@ header {
 
 .project-page {
   margin-top: 20px;
+}
+
+.d-none {
+  display: none;
+  opacity: 0;
+}
+
+.header-hide {
+  display: none;
+}
+
+.header-show {
+  display: flex;
 }

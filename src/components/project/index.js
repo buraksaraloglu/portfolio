@@ -37,7 +37,7 @@ export const Project = () => {
   const project = works.filter((work) => work.slug === slug);
 
   return project.map((demoWork) => (
-    <>
+    <section key={demoWork.id}>
       <Helmet>
         <title>{demoWork.title} - Burak Saraloglu</title>
         <meta name="description" content={demoWork.desc} />
@@ -97,6 +97,6 @@ export const Project = () => {
           </aside>
         </article>
       </section>
-    </>
+    </section>
   ));
 };

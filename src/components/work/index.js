@@ -5,7 +5,7 @@ export const Work = () => {
   const [device, setDevice] = useState('');
   useEffect(() => {
     const width = window.innerWidth;
-    width > 1100 ? setDevice('desktop') : setDevice('phone');
+    width > 800 ? setDevice('desktop') : setDevice('phone');
   }, []);
 
   return works.map((demoWork) => (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai';
 import { BiArrowBack } from 'react-icons/bi';
@@ -9,8 +9,33 @@ export const Header = () => {
     const defaultAnalytics = firebase.analytics();
     defaultAnalytics.logEvent('file_download', { content_id: 'portfolio' });
   };
+
+  const headerRef = useRef(null);
+  const hide = 'header-hide';
+  const show = 'header-show';
+  useEffect(() => {
+    headerRef.current.classList.add(hide);
+    const workContainer = document.getElementById('works');
+    const worksContainerOffset = workContainer.offsetTop - window.pageYOffset;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll >= worksContainerOffset) {
+        // Down
+        headerRef.current.classList.remove(hide);
+        headerRef.current.classList.add(show);
+        return;
+      } else {
+        // Up
+        headerRef.current.classList.remove(show);
+        headerRef.current.classList.add(hide);
+      }
+    });
+  }, []);
+
   return (
-    <header>
+    <header ref={headerRef}>
       <nav>
         <a href="/#works" tabIndex="0">
           Works
@@ -70,11 +95,7 @@ export const ProjectHeader = () => {
   const history = useHistory();
   const handleResumeClick = (e) => {
     const defaultAnalytics = firebase.analytics();
-    defaultAnalytics.logEvent('select_content', {
-      content_type: 'portfolio',
-      content_id: 'portfolio',
-      items: [{ name: 'Portfolio' }],
-    });
+    defaultAnalytics.logEvent('file_download', { content_id: 'portfolio' });
   };
 
   return (
