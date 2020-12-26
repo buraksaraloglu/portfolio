@@ -292,6 +292,10 @@ header {
             text-decoration: none;
             cursor: pointer;
 
+            &:focus {
+              outline: 0;
+            }
+
             &:after {
               content: '';
               position: absolute;
@@ -352,7 +356,7 @@ header {
 
   &__inner {
     display: flex;
-    padding: 80px 40px;
+    padding: 80px 20px;
     margin: 0 auto;
 
     &__top {
@@ -403,7 +407,7 @@ header {
             display: flex;
             justify-content: space-between;
             .demo-link {
-              margin-left: 10px;
+              margin: 0 0 0 10px;
               &:focus {
                 outline: 0;
               }
