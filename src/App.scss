@@ -290,6 +290,9 @@ header {
           display: block;
           float: left;
           margin-right: 40px;
+          @media (max-width: 600px) {
+            margin-right: 25px;
+          }
           a {
             position: relative;
             display: inline-block;
@@ -470,7 +473,7 @@ header {
           flex-direction: column;
           .source-links {
             display: flex;
-            margin-top: 10px;
+            margin-top: 20px;
             .demo-link {
               margin: 0 20px 0 0;
             }
@@ -705,11 +708,6 @@ header {
 
 .project-page {
   margin-top: 20px;
-}
-
-.d-none {
-  display: none;
-  opacity: 0;
 }
 
 .header-hide {

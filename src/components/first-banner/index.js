@@ -23,11 +23,9 @@ export const FirstBanner = () => {
           <h1 className="introduction__name">Burak Saraloglu</h1>
           <h2 className="introduction__header">
             Hello, I’m Burak, a front-end developer. 👋
-            <br />
-            <span>
-              I dedicate my time to develop products and create useful services
-              mostly built with React. I also do music productions and videos.
-            </span>
+            <br />I dedicate my time to develop products and create useful
+            services mostly built with React.
+            <span> I also do music productions and videos.</span>
           </h2>
           <nav>
             <ul>
