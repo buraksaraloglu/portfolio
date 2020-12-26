@@ -37,9 +37,9 @@ export const Header = () => {
   return (
     <header ref={headerRef}>
       <nav>
-        <a href="/#works" tabIndex="0">
+        {/* <a href="/#works" tabIndex="0">
           Works
-        </a>
+        </a> */}
         <a
           target="_blank"
           rel="noopener noreferrer"
