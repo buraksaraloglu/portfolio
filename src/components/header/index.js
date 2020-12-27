@@ -43,7 +43,7 @@ export const Header = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="/dist/Burak_Saraloglu_CV.pdf"
+          href="/dist/Burak_Saraloglu_Resume.pdf"
           tabIndex="0"
           onClick={(e) => {
             handleResumeClick(e);
@@ -108,7 +108,7 @@ export const ProjectHeader = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="/dist/Burak_Saraloglu_CV.pdf"
+          href="/dist/Burak_Saraloglu_Resume.pdf"
           tabIndex="0"
           onClick={(e) => {
             handleResumeClick(e);
