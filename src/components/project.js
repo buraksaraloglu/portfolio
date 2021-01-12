@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
+
 import { ProjectHeader } from "./header"
 import works from "../fixtures/works.json"
+
+import "./app.scss"
 
 const Project = ({ data }) => {
   const [device, setDevice] = useState("")
