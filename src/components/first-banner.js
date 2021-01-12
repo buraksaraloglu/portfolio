@@ -1,28 +1,21 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import firebase from 'firebase/app';
+import React from "react"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-export const FirstBanner = () => {
-  const handleResumeClick = (e) => {
-    const defaultAnalytics = firebase.analytics();
-    defaultAnalytics.logEvent('file_download', { content_id: 'portfolio' });
-  };
+const FirstBanner = () => {
+  const handleResumeClick = e => {
+    // const defaultAnalytics = firebase.analytics()
+    // defaultAnalytics.logEvent("file_download", { content_id: "portfolio" })
+  }
   return (
     <>
-      <Helmet>
-        <title>Burak Saraloglu - Front-end Developer</title>
-        <meta
-          name="description"
-          content="Hello, I’m Burak, a front-end developer. 👋
-              I dedicate my time to develop products and create useful services
-              mostly built with React. I also do music productions and videos."
-        />
-      </Helmet>
       <section className="first-banner">
         <article className="introduction">
           <h1 className="introduction__name">Burak Saraloglu</h1>
           <h2 className="introduction__header">
-            Hello, I’m Burak, a front-end developer. 👋
+            Hello, I’m Burak, a front-end developer.{" "}
+            <span role="img" aria-label="hello">
+              👋
+            </span>
             <br />I dedicate my time to develop products and create useful
             services mostly built with React.
             <span> I also do music productions and videos.</span>
@@ -30,7 +23,7 @@ export const FirstBanner = () => {
           <nav>
             <ul>
               <li>
-                <a
+                <OutboundLink
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://www.linkedin.com/in/buraksaraloglu/"
@@ -38,10 +31,10 @@ export const FirstBanner = () => {
                   aria-label="Linkedin"
                 >
                   Linkedin
-                </a>
+                </OutboundLink>
               </li>
               <li>
-                <a
+                <OutboundLink
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://github.com/buraksaraloglu"
@@ -49,10 +42,10 @@ export const FirstBanner = () => {
                   aria-label="Github"
                 >
                   Github
-                </a>
+                </OutboundLink>
               </li>
               <li>
-                <a
+                <OutboundLink
                   target="_blank"
                   rel="noopener noreferrer"
                   href="mailto:buraksaraloglu1@gmail.com"
@@ -60,20 +53,20 @@ export const FirstBanner = () => {
                   aria-label="Mail"
                 >
                   Mail
-                </a>
+                </OutboundLink>
               </li>
               <li>
-                <a
+                <OutboundLink
                   target="_blank"
                   rel="noopener noreferrer"
                   href="/dist/Burak_Saraloglu_Resume.pdf"
                   tabIndex="0"
-                  onClick={(e) => {
-                    handleResumeClick(e);
+                  onClick={e => {
+                    handleResumeClick(e)
                   }}
                 >
                   Resume
-                </a>
+                </OutboundLink>
               </li>
             </ul>
           </nav>
@@ -83,5 +76,7 @@ export const FirstBanner = () => {
         </div>
       </section>
     </>
-  );
-};
+  )
+}
+
+export default FirstBanner

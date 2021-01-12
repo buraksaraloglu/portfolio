@@ -1,26 +1,26 @@
 [
-    {
-        "id": 1,
-        "slug": "whatwas",
-        "title": "WhatWas?",
-        "desc": "Note taking app built with React, styled-components, Firebase and Firestore.",
-        "homeImg": "/images/misc/whatwas-demo-home.webp",
-        "imgLink": "/images/misc/whatwas-demo.webp",
-        "mobileImgLink": "/images/misc/whatwas-demo-phone.webp",
-        "alt": "WhatWas - Note taking app",
-        "github": "https://github.com/buraksaraloglu/whatwas",
-        "demo": "https://whatwas.app"
-    },
-    {
-        "id": 2,
-        "slug": "tictactoe",
-        "title": "Tic-Tac-Toe",
-        "desc": "A single player tic-tac-toe game built with VanillaJS and implemented Minimax algorithm.",
-        "homeImg": "/images/misc/tictactoe-demo.webp",
-        "imgLink": "/images/misc/tictactoe-demo.webp",
-        "mobileImgLink": "/images/misc/tictactoe-demo-phone.webp",
-        "alt": "Tic Tac Toe",
-        "github": "https://github.com/buraksaraloglu/tictactoe",
-        "demo": "https://buraksaraloglu.github.io/tictactoe/"
-    }
+  {
+    "id": 1,
+    "slug": "whatwas",
+    "title": "WhatWas?",
+    "desc": "Note taking app built with React, styled-components, Firebase and Firestore.",
+    "homeImg": "/images/misc/whatwas-demo-home.webp",
+    "imgLink": "/images/misc/whatwas-demo.webp",
+    "mobileImgLink": "/images/misc/whatwas-demo-phone.webp",
+    "alt": "WhatWas - Note taking app",
+    "github": "https://github.com/buraksaraloglu/whatwas",
+    "demo": "https://whatwas.app"
+  },
+  {
+    "id": 2,
+    "slug": "tictactoe",
+    "title": "Tic-Tac-Toe",
+    "desc": "A single player tic-tac-toe game built with VanillaJS and implemented Minimax algorithm.",
+    "homeImg": "/images/misc/tictactoe-demo.webp",
+    "imgLink": "/images/misc/tictactoe-demo.webp",
+    "mobileImgLink": "/images/misc/tictactoe-demo-phone.webp",
+    "alt": "Tic Tac Toe",
+    "github": "https://github.com/buraksaraloglu/tictactoe",
+    "demo": "https://buraksaraloglu.github.io/tictactoe/"
+  }
 ]

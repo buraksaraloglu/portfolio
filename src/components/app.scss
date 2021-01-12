@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap");
 
 html,
 body,
@@ -115,13 +115,13 @@ q {
   border-left: 10px solid #ccc;
   margin: 10px 0;
   padding: 1em 10px;
-  quotes: '\201C''\201D''\2018''\2019';
+  quotes: "\201C""\201D""\2018""\2019";
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -154,7 +154,7 @@ html {
 
 body {
   background-color: $body-background;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   color: $body-text;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -165,7 +165,7 @@ body {
   }
 }
 button {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -307,7 +307,7 @@ header {
             }
 
             &:after {
-              content: '';
+              content: "";
               position: absolute;
               width: 100%;
               height: 2px;
@@ -332,7 +332,7 @@ header {
     &__name {
       font-size: 18px;
       font-weight: 400;
-      opacity: 0.4;
+      opacity: 0.6;
     }
 
     &__header {
@@ -351,7 +351,7 @@ header {
       width: 90%;
     }
     .scroll-indicator {
-      bottom: 7rem;
+      bottom: 6rem;
     }
   }
 }
@@ -367,6 +367,10 @@ header {
   background-color: $project-background;
   border-bottom: 1px solid #0000000f;
   transition: box-shadow 0.3s ease-in-out;
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
 
   &__inner {
     display: flex;
@@ -408,7 +412,7 @@ header {
           align-items: center;
           margin-bottom: 20px;
           .demo-title {
-            font-family: 'Playfair Display', serif;
+            font-family: "Playfair Display", serif;
             font-weight: 600;
             font-size: 52px;
             margin-right: 10px;
@@ -524,7 +528,7 @@ header {
   opacity: 0.5;
   &::before,
   &::after {
-    content: '';
+    content: "";
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -550,7 +554,7 @@ header {
     display: block;
     &::before,
     &::after {
-      content: '';
+      content: "";
       display: block;
       margin: 5px auto;
       border-radius: 10px;
