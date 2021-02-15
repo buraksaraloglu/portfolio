@@ -1,13 +1,9 @@
 import React from "react"
-import { useFirebase } from "gatsby-plugin-firebase"
+import firebase from "gatsby-plugin-firebase"
 
 const FirstBanner = () => {
   const handleResumeClick = e => {
-    useFirebase(firebase => {
-      firebase
-        .analytics()
-        .logEvent("file_download", { content_id: "portfolio" })
-    })
+    firebase.analytics().logEvent("file_download", { content_id: "portfolio" })
   }
 
   return (
