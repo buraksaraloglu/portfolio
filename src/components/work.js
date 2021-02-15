@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import works from "../fixtures/works.json"
 
@@ -14,7 +13,7 @@ const Work = () => {
     <section className="work" key={demoWork.id}>
       <article className="work__inner">
         <aside className="work__inner__top">
-          <OutboundLink href={`/work/${demoWork.slug}`} tabIndex="0">
+          <a href={`/work/${demoWork.slug}`} tabIndex="0">
             <img
               srcSet={
                 device === "desktop"
@@ -32,14 +31,14 @@ const Work = () => {
               loading="lazy"
               className="demo-image"
             />
-          </OutboundLink>
+          </a>
         </aside>
         <aside className="work__inner__bottom">
           <div className="description-container">
             <div className="title-container">
               <h3 className="demo-title">{demoWork.title} </h3>
               <div className="source-links">
-                <OutboundLink
+                <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href={demoWork.demo}
@@ -47,8 +46,8 @@ const Work = () => {
                   className="outline-button demo-link"
                 >
                   Live Demo
-                </OutboundLink>
-                <OutboundLink
+                </a>
+                <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href={demoWork.github}
@@ -56,7 +55,7 @@ const Work = () => {
                   className="outline-button demo-link"
                 >
                   Github
-                </OutboundLink>
+                </a>
               </div>
             </div>
             <p className="demo-description">{demoWork.desc}</p>
