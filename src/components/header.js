@@ -1,13 +1,17 @@
 import React, { useEffect, useRef } from "react"
 import { Link } from "gatsby"
+import { useFirebase } from "gatsby-plugin-firebase"
 
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai"
 import { BiArrowBack } from "react-icons/bi"
 
 const Header = () => {
   const handleResumeClick = e => {
-    // const defaultAnalytics = firebase.analytics()
-    // defaultAnalytics.logEvent("file_download", { content_id: "portfolio" })
+    useFirebase(firebase => {
+      firebase
+        .analytics()
+        .logEvent("file_download", { content_id: "portfolio" })
+    })
   }
 
   const headerRef = useRef(null)

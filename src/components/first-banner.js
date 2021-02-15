@@ -1,11 +1,15 @@
 import React from "react"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { useFirebase } from "gatsby-plugin-firebase"
 
 const FirstBanner = () => {
   const handleResumeClick = e => {
-    // const defaultAnalytics = firebase.analytics()
-    // defaultAnalytics.logEvent("file_download", { content_id: "portfolio" })
+    useFirebase(firebase => {
+      firebase
+        .analytics()
+        .logEvent("file_download", { content_id: "portfolio" })
+    })
   }
+
   return (
     <>
       <section className="first-banner">
@@ -23,7 +27,7 @@ const FirstBanner = () => {
           <nav>
             <ul>
               <li>
-                <OutboundLink
+                <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://www.linkedin.com/in/buraksaraloglu/"
@@ -31,10 +35,10 @@ const FirstBanner = () => {
                   aria-label="Linkedin"
                 >
                   Linkedin
-                </OutboundLink>
+                </a>
               </li>
               <li>
-                <OutboundLink
+                <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://github.com/buraksaraloglu"
@@ -42,10 +46,10 @@ const FirstBanner = () => {
                   aria-label="Github"
                 >
                   Github
-                </OutboundLink>
+                </a>
               </li>
               <li>
-                <OutboundLink
+                <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href="mailto:buraksaraloglu1@gmail.com"
@@ -53,10 +57,10 @@ const FirstBanner = () => {
                   aria-label="Mail"
                 >
                   Mail
-                </OutboundLink>
+                </a>
               </li>
               <li>
-                <OutboundLink
+                <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href="/dist/Burak_Saraloglu_Resume.pdf"
@@ -66,7 +70,7 @@ const FirstBanner = () => {
                   }}
                 >
                   Resume
-                </OutboundLink>
+                </a>
               </li>
             </ul>
           </nav>
