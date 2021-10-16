@@ -1,0 +1,25 @@
+.navigation-container {
+	display: flex;
+	padding: .5rem;
+
+	.item {
+
+		&__text {
+			display: flex;
+			align-items: center;
+			margin: 0 .5rem;
+			padding: 8px;
+
+			&__mobile {
+				padding: 4px;
+			}
+
+			&:hover {
+				color: #001d9b;
+			}
+		}
+
+
+	}
+
+}

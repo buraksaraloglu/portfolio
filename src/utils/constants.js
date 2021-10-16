@@ -1,0 +1,7 @@
+export const MAX_DEVICE_SIZES = {
+	SMALL_PHONE: 320,
+	PHONE: 532,
+	TABLET: 768,
+	SMALL_PC: 992,
+	LARGE: 1200,
+};

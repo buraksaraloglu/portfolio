@@ -1,0 +1,7 @@
+.hero-container {
+	margin: 4rem 0;
+
+	@media (min-width: 768px) {
+		margin: 8rem 0;
+	}
+}

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import './styles/reset.scss';
+
+html, body {
+	background-color: #ffffff !important;
+}
+
+::selection {
+	background: #e2e8ff;
+	color: #001d9b;
+}
+
+/* @media (prefers-color-scheme: dark) {
+	body, html {
+			background: #111111;
+	} */
+/* } */

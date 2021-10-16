@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "slug": "whatwas",
+    "title": "WhatWas?",
+    "description": "Note taking app built with React, styled-components, Firebase and Firestore.",
+    "image": "/assets/projects/whatwas/whatwas-demo-phone.webp",
+    "alt": "WhatWas - Note taking app",
+    "github": "https://github.com/buraksaraloglu/whatwas",
+    "demo": "https://whatwas.app"
+  },
+  {
+    "id": 2,
+    "slug": "tictactoe",
+    "title": "Tic-Tac-Toe",
+    "description": "A single player tic-tac-toe game built with VanillaJS and implemented Minimax algorithm.",
+    "image": "/assets/projects/tictactoe/tictactoe-demo-phone.webp",
+    "alt": "Tic Tac Toe",
+    "github": "https://github.com/buraksaraloglu/tictactoe",
+    "demo": "https://buraksaraloglu.github.io/tictactoe/"
+  }
+]

@@ -1,0 +1,14 @@
+.button-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 4px;
+	min-width: 66px;
+	color: #001d9b;
+	background-color: #F2F7FF;
+
+	transition: all 0.3s ease;
+	&:hover {
+		box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+	}
+}
