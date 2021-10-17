@@ -6,7 +6,7 @@ import { useMediaQuery } from '@mantine/hooks';
 import { MAX_DEVICE_SIZES } from '../../../utils/constants';
 import './styles.scss';
 
-const ButtonLink = ({ title, href }) => {
+const ButtonLink = ({ title, href, ...props }) => {
 	const isMobile = useMediaQuery(`(max-width: ${MAX_DEVICE_SIZES.PHONE}px)`);
 
 	return (
@@ -21,6 +21,7 @@ const ButtonLink = ({ title, href }) => {
 			rel="noopener noreferrer"
 			radius="md"
 			compact={isMobile}
+			{...props}
 		>
 			{title}
 		</Button>

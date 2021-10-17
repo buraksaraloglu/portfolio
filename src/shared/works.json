@@ -1,16 +1,34 @@
 [
   {
-    "id": 1,
+    "id": "whatwas",
     "slug": "whatwas",
     "title": "WhatWas?",
-    "description": "Note taking app built with React, styled-components, Firebase and Firestore.",
+    "description": "WhatWas is note taking app that allows users to save and organize their content on every device. Built with React, styled-components, Firebase, and Firestore.",
     "image": "/assets/projects/whatwas/whatwas-demo-phone.webp",
     "alt": "WhatWas - Note taking app",
     "github": "https://github.com/buraksaraloglu/whatwas",
     "demo": "https://whatwas.app"
   },
   {
-    "id": 2,
+    "id": "arena",
+    "slug": "arena",
+    "title": "Arena",
+    "description": "A battle royale game built with VanillaJS, HTML Canvas, Socket.IO, and NodeJS.",
+    "image": "/assets/projects/arena/arena-demo-phone.webp",
+    "alt": "Arena - Battle Royale game",
+    "github": "https://github.com/buraksaraloglu/arena",
+    "demo": "https://arena-bs.netlify.app/"
+  },
+  {
+    "id": "trace-vitals",
+    "slug": "trace-vitals",
+    "title": "trace-vitals",
+    "description": "trace-vitals is a small script that traces the web-vitals and sends the reports to the given endpoint.",
+    "alt": "trace-vitals",
+    "github": "https://github.com/buraksaraloglu/trace-vitals"
+  },
+  {
+    "id": "tictactoe",
     "slug": "tictactoe",
     "title": "Tic-Tac-Toe",
     "description": "A single player tic-tac-toe game built with VanillaJS and implemented Minimax algorithm.",
