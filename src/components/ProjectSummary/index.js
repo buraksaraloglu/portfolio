@@ -31,7 +31,7 @@ const ProjectSummaryItem = ({ project }) => {
 					<Image
 						mx="auto"
 						src={project.image}
-						height={isMobile ? 220 : 240}
+						height={isMobile ? 220 : 280}
 						radius="lg"
 						alt={project.title}
 						className="summary-item__image"
