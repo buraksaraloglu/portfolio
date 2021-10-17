@@ -1,21 +1,31 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Paper, Text, Image, Button, SimpleGrid } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
+import { useMediaQuery, useIntersection } from '@mantine/hooks';
 import { FiArrowRight } from 'react-icons/fi';
 
+import { handleAnalyticsLog } from '../../utils/handleAnalyticsLog';
 import ButtonLink from '../UI/ButtonLink';
 import { MAX_DEVICE_SIZES } from '../../utils/constants';
 
 import './styles.scss';
 
 const ProjectSummaryItem = ({ project }) => {
+	const containerRef = useRef();
+	const [ref, observer] = useIntersection({
+		root: containerRef.current,
+		threshold: 1,
+	});
 	const isMobile = useMediaQuery(`(max-width: ${MAX_DEVICE_SIZES.PHONE}px)`);
 
 	if (!project?.description || !project?.title) return null;
 
+	if (observer?.isIntersecting) {
+		handleAnalyticsLog('view_item', project.title);
+	}
+
 	return (
-		<Paper radius="xl" className="summary-item" my={16} pb={isMobile ? 16 : null}>
+		<Paper radius="xl" className="summary-item" my={16} pb={isMobile ? 16 : null} ref={ref}>
 			<SimpleGrid
 				cols={project.image ? 2 : 1}
 				breakpoints={[
@@ -53,10 +63,20 @@ const ProjectSummaryItem = ({ project }) => {
 						</Text>
 						<div className="content-container__links-container">
 							{project.demo ? (
-								<ButtonLink title="Live Demo" href={project.demo} aria-label="Project demo link" />
+								<ButtonLink
+									title="Live Demo"
+									href={project.demo}
+									onMouseDown={() => handleAnalyticsLog('click', `${project.title} demo`)}
+									aria-label="Project demo link"
+								/>
 							) : null}
 							{project.github ? (
-								<ButtonLink title="GitHub" href={project.github} aria-label="Project github link" />
+								<ButtonLink
+									title="GitHub"
+									href={project.github}
+									aria-label="Project github link"
+									onMouseDown={() => handleAnalyticsLog('click', `${project.title} GitHub`)}
+								/>
 							) : null}
 						</div>
 					</Paper>
@@ -83,6 +103,7 @@ const ProjectSummaryItem = ({ project }) => {
 							href={project.github}
 							target="_blank"
 							rel="noopener noreferrer"
+							onMouseDown={() => handleAnalyticsLog('click', `${project.title} View More (GitHub)`)}
 						>
 							View more
 						</Button>

@@ -8,8 +8,11 @@ const Hero = lazy(() => import('./components/Hero'));
 const ProjectSummaries = lazy(() => import('../../containers/ProjectSummaries'));
 
 const Home = () => {
+	const url = window.location.href;
+
 	logEvent(analytics, 'page_view', {
-		name: 'Home Page',
+		page_title: 'Home Page',
+		page_location: url,
 	});
 
 	return (
