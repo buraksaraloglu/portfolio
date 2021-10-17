@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { logEvent } from 'firebase/analytics';
 
-import ProjectSummaries from '../../containers/ProjectSummaries';
-import Hero from './components/Hero';
 import { analytics } from '../../shared/firebase';
+import HeroSkeleton from './components/Hero/skeleton';
+
+const Hero = lazy(() => import('./components/Hero'));
+const ProjectSummaries = lazy(() => import('../../containers/ProjectSummaries'));
 
 const Home = () => {
 	logEvent(analytics, 'page_view', {
@@ -12,8 +14,12 @@ const Home = () => {
 
 	return (
 		<>
-			<Hero />
-			<ProjectSummaries />
+			<Suspense fallback={<HeroSkeleton />}>
+				<Hero />
+			</Suspense>
+			<Suspense fallback={<div>Loading</div>}>
+				<ProjectSummaries />
+			</Suspense>
 		</>
 	);
 };
