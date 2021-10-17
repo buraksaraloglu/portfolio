@@ -5,8 +5,6 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-console.log('process.env.REACT_APP_FIREBASE_API_KEY', process.env.REACT_APP_FIREBASE_API_KEY);
-
 export const firebaseConfig = {
 	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
 	authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
