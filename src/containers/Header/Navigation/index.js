@@ -3,6 +3,8 @@ import { useMediaQuery } from '@mantine/hooks';
 import { Menu, Text } from '@mantine/core';
 import { AiOutlineMenu } from 'react-icons/ai';
 
+import { handleAnalyticsLog } from '../../../utils/handleAnalyticsLog';
+
 import { MAX_DEVICE_SIZES } from '../../../utils/constants';
 
 import './styles.scss';
@@ -30,7 +32,8 @@ const Navigation = () => {
 				target="_blank"
 				rel="noopener noreferrer"
 				className={`item__text ${isMobile ? 'item__text__mobile' : null}`}
-				aria-label="Burak Saraloglu GitHub profile link"
+				aria-label="Burak Saraloglu portfolio pdf link"
+				onMouseDown={() => handleAnalyticsLog('click', `MENU - Portfolio`)}
 			>
 				Resume
 			</Menu.Item>
@@ -40,6 +43,7 @@ const Navigation = () => {
 				rel="noopener noreferrer"
 				className={`item__text ${isMobile ? 'item__text__mobile' : null}`}
 				aria-label="Burak Saraloglu GitHub profile link"
+				onMouseDown={() => handleAnalyticsLog('click', `MENU - Mail`)}
 			>
 				Mail
 			</Menu.Item>
@@ -50,6 +54,7 @@ const Navigation = () => {
 				rel="noopener noreferrer"
 				className={`item__text ${isMobile ? 'item__text__mobile' : null}`}
 				aria-label="Burak Saraloglu GitHub profile link"
+				onMouseDown={() => handleAnalyticsLog('click', `MENU - GitHub`)}
 			>
 				GitHub
 			</Menu.Item>
@@ -60,6 +65,7 @@ const Navigation = () => {
 				rel="noopener noreferrer"
 				className={`item__text ${isMobile ? 'item__text__mobile' : null}`}
 				aria-label="Burak Saraloglu LinkedIn profile link"
+				onMouseDown={() => handleAnalyticsLog('click', `MENU - LinkedIn`)}
 			>
 				LinkedIn
 			</Menu.Item>
@@ -72,7 +78,8 @@ const Navigation = () => {
 				target="_blank"
 				rel="noopener noreferrer"
 				className={`item__text ${isMobile ? 'item__text__mobile' : null}`}
-				aria-label="Burak Saraloglu GitHub profile link"
+				aria-label="Burak Saraloglu portfolio pdf link"
+				onMouseDown={() => handleAnalyticsLog('click', `MENU - Portfolio`)}
 			>
 				Resume
 			</Text>
@@ -82,6 +89,7 @@ const Navigation = () => {
 				rel="noopener noreferrer"
 				className={`item__text ${isMobile ? 'item__text__mobile' : null}`}
 				aria-label="Burak Saraloglu GitHub profile link"
+				onMouseDown={() => handleAnalyticsLog('click', `MENU - Mail`)}
 			>
 				Mail
 			</Text>
@@ -92,6 +100,7 @@ const Navigation = () => {
 				rel="noopener noreferrer"
 				className={`item__text ${isMobile ? 'item__text__mobile' : null}`}
 				aria-label="Burak Saraloglu GitHub profile link"
+				onMouseDown={() => handleAnalyticsLog('click', `MENU - GitHub`)}
 			>
 				GitHub
 			</Text>
@@ -102,6 +111,7 @@ const Navigation = () => {
 				rel="noopener noreferrer"
 				className={`item__text ${isMobile ? 'item__text__mobile' : null}`}
 				aria-label="Burak Saraloglu LinkedIn profile link"
+				onMouseDown={() => handleAnalyticsLog('click', `MENU - LinkedIn`)}
 			>
 				LinkedIn
 			</Text>
