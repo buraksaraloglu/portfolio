@@ -1,6 +1,6 @@
 .summary-item {
 	padding: 1rem;
-	min-height: 18rem;
+	min-height: 16rem;
 	background-color: #f1f3f5;
 
 	@media (min-width: 768px) {
@@ -35,7 +35,6 @@
 			justify-content: space-between;
 			background-color: #ffffff;
 			padding: 8px;
-			// border-radius: 8px;
 
 			&__links-container {
 				display: flex;

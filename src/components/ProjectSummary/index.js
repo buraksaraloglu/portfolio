@@ -12,33 +12,39 @@ import './styles.scss';
 const ProjectSummaryItem = ({ project }) => {
 	const isMobile = useMediaQuery(`(max-width: ${MAX_DEVICE_SIZES.PHONE}px)`);
 
+	if (!project?.description || !project?.title) return null;
+
 	return (
 		<Paper radius="xl" className="summary-item" my={16} pb={isMobile ? 16 : null}>
 			<SimpleGrid
-				cols={2}
+				cols={project.image ? 2 : 1}
 				breakpoints={[
-					{ maxWidth: 980, cols: 2, spacing: 'md' },
+					{ maxWidth: 980, cols: project.image ? 2 : 1, spacing: 'md' },
 					{ maxWidth: MAX_DEVICE_SIZES.PHONE, cols: 1, spacing: 'md' },
 					{ maxWidth: MAX_DEVICE_SIZES.SMALL_PHONE, cols: 1, spacing: 'xs' },
 				]}
+				style={{ height: '100%' }}
 			>
-				<div
-					style={{
-						marginTop: 'auto',
-					}}
-					className="summary-item__image-container"
-				>
-					<Image
-						mx="auto"
-						src={project.image}
-						height={isMobile ? 220 : 280}
-						radius="lg"
-						alt={project.title}
-						className="summary-item__image"
-						withPlaceholder
-						imageProps={{ loading: 'lazy' }}
-					/>
-				</div>
+				{project.image ? (
+					<div
+						style={{
+							marginTop: 'auto',
+						}}
+						className="summary-item__image-container"
+					>
+						<Image
+							mx="auto"
+							src={project.image}
+							height={isMobile ? 220 : 218}
+							radius="lg"
+							alt={project.title}
+							className="summary-item__image"
+							withPlaceholder
+							imageProps={{ loading: 'lazy' }}
+						/>
+					</div>
+				) : null}
+
 				<div className="content-wrapper">
 					{/* Project Header */}
 					<Paper radius="lg" className="content-container" mb={16}>
@@ -46,8 +52,12 @@ const ProjectSummaryItem = ({ project }) => {
 							{project.title}
 						</Text>
 						<div className="content-container__links-container">
-							<ButtonLink title="Live Demo" href={project.demo} aria-label="Project demo link" />
-							<ButtonLink title="GitHub" href={project.github} aria-label="Project github link" />
+							{project.demo ? (
+								<ButtonLink title="Live Demo" href={project.demo} aria-label="Project demo link" />
+							) : null}
+							{project.github ? (
+								<ButtonLink title="GitHub" href={project.github} aria-label="Project github link" />
+							) : null}
 						</div>
 					</Paper>
 					<div className="content-wrapper__description-container">
@@ -55,7 +65,7 @@ const ProjectSummaryItem = ({ project }) => {
 							component="article"
 							size="md"
 							m={{ y: '1rem' }}
-							lineClamp={3}
+							lineClamp={4}
 							className="content-wrapper__description-container__description"
 							aria-label={project.description}
 							color="gray"
@@ -87,9 +97,9 @@ ProjectSummaryItem.propTypes = {
 	project: PropTypes.shape({
 		title: PropTypes.string.isRequired,
 		description: PropTypes.string.isRequired,
-		image: PropTypes.string.isRequired,
+		image: PropTypes.string,
 		github: PropTypes.string.isRequired,
-		demo: PropTypes.string.isRequired,
+		demo: PropTypes.string,
 	}).isRequired,
 };
 

@@ -26,6 +26,16 @@ const Navigation = () => {
 		>
 			<Menu.Item
 				component="a"
+				href="/dist/Burak_Saraloglu_Resume.pdf"
+				target="_blank"
+				rel="noopener noreferrer"
+				className={`item__text ${isMobile ? 'item__text__mobile' : null}`}
+				aria-label="Burak Saraloglu GitHub profile link"
+			>
+				Resume
+			</Menu.Item>
+			<Menu.Item
+				component="a"
 				href="mailto:buraksaraloglu1@gmail.com"
 				rel="noopener noreferrer"
 				className={`item__text ${isMobile ? 'item__text__mobile' : null}`}
@@ -58,7 +68,8 @@ const Navigation = () => {
 		<nav className="navigation-container">
 			<Text
 				component="a"
-				href="mailto:buraksaraloglu1@gmail.com"
+				href="/dist/Burak_Saraloglu_Resume.pdf"
+				target="_blank"
 				rel="noopener noreferrer"
 				className={`item__text ${isMobile ? 'item__text__mobile' : null}`}
 				aria-label="Burak Saraloglu GitHub profile link"
