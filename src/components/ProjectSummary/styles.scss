@@ -52,6 +52,12 @@
 			&__description {
 				font-style: italic;
 			}
+
+			&__action_button {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 }

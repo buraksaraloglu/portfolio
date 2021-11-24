@@ -103,6 +103,7 @@ const ProjectSummaryItem = ({ project }) => {
 							href={project.github}
 							target="_blank"
 							rel="noopener noreferrer"
+							className="content-wrapper__description-container__action_button"
 							onMouseDown={() => handleAnalyticsLog('click', `${project.title} View More (GitHub)`)}
 						>
 							View more
