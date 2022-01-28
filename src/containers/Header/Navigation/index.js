@@ -74,7 +74,7 @@ const Navigation = () => {
 		<nav className="navigation-container">
 			<Text
 				component="a"
-				href="/dist/burak_saraloglu_resume.pdf"
+				href="/dist/Burak_Saraloglu_Resume.pdf"
 				target="_blank"
 				rel="noopener noreferrer"
 				className={`item__text ${isMobile ? 'item__text__mobile' : null}`}
