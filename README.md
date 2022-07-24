@@ -1,4 +1,6 @@
 # Burak Saraloglu
 
 Hello, I'm Burak.
-A Front-end Developer and you can see my portfolio at [buraksaraloglu.com](https://buraksaraloglu.com).
+A full-stack developer. 
+
+You can see my portfolio at [buraksaraloglu.com](https://buraksaraloglu.com).
