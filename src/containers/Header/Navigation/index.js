@@ -28,7 +28,7 @@ const Navigation = () => {
 		>
 			<Menu.Item
 				component="a"
-				href="/dist/Burak_Saraloglu_Resume.pdf"
+				href="/dist/burak-saraloglu-resume.pdf"
 				target="_blank"
 				rel="noopener noreferrer"
 				className={`item__text ${isMobile ? 'item__text__mobile' : null}`}

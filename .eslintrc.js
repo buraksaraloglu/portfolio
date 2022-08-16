@@ -29,6 +29,7 @@ module.exports = {
 	},
 	rules: {
 		'prettier/prettier': ['error', prettierOptions],
+		'react/prop-types': 0,
 		'class-methods-use-this': 0,
 		'import/imports-first': 0,
 		'import/no-dynamic-require': 0,
